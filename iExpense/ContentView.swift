@@ -43,21 +43,47 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(expenses.items) { item in
-                    HStack {
-                        VStack {
-                            Text(item.name)
-                                .font(.headline)
-                            Text(item.type)
+                /// Challenge 3:
+                Section {
+                    ForEach(expenses.items.filter { $0.type == "Business" }) { item in
+                        HStack {
+                            VStack {
+                                Text(item.name)
+                                    .font(.headline)
+                                Text(item.type)
+                            }
+                            Spacer()
+                            /// Challenge 1:
+                            Text(item.amount, format: ContentView.localCurrency)
+                            /// Challenge 2:
+                                .fontColor(for: item.amount)
                         }
-                        Spacer()
-                        /// Challenge 1:
-                        Text(item.amount, format: ContentView.localCurrency)
-                        /// Challenge 2:
-                            .fontColor(for: item.amount)
                     }
+                    .onDelete(perform: removeBusinessExpense)
+                } header: {
+                    Text("Business")
                 }
-                .onDelete(perform: removeItems)
+                
+                /// Challenge 3:
+                Section {
+                    ForEach(expenses.items.filter { $0.type == "Personal" }) { item in
+                        HStack {
+                            VStack {
+                                Text(item.name)
+                                    .font(.headline)
+                                Text(item.type)
+                            }
+                            Spacer()
+                            /// Challenge 1:
+                            Text(item.amount, format: ContentView.localCurrency)
+                            /// Challenge 2:
+                                .fontColor(for: item.amount)
+                        }
+                    }
+                    .onDelete(perform: removePersonalExpense)
+                } header: {
+                    Text("Personal")
+                }
             }
             .navigationTitle("iExpense")
             .toolbar {
@@ -73,8 +99,23 @@ struct ContentView: View {
         }
     }
     
-    func removeItems(at offsets: IndexSet) {
-        expenses.items.remove(atOffsets: offsets)
+    /// Challenge 3:
+    func removeBusinessExpense(at offsets: IndexSet) {
+        let businessExpenses = expenses.items.filter { $0.type == "Business" }
+        for offset in offsets {
+            let sectionExpense = businessExpenses[offset]
+            let expenseID = sectionExpense.id
+            expenses.items.removeAll(where: { $0.id == expenseID })
+        }
+    }
+    
+    func removePersonalExpense(at offsets: IndexSet) {
+        let personalExpenses = expenses.items.filter { $0.type == "Personal" }
+        for offset in offsets {
+            let sectionExpense = personalExpenses[offset]
+            let expenseID = sectionExpense.id
+            expenses.items.removeAll(where: { $0.id == expenseID })
+        }
     }
 }
 
