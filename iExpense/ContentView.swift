@@ -37,9 +37,6 @@ struct ContentView: View {
     
     @State private var showingAddExpense = false
     
-    /// Challenge 1:
-    static let localCurrency: FloatingPointFormatStyle<Double>.Currency = .currency(code: Locale.current.currencyCode ?? "USD")
-    
     var body: some View {
         NavigationView {
             List {
@@ -54,7 +51,7 @@ struct ContentView: View {
                             }
                             Spacer()
                             /// Challenge 1:
-                            Text(item.amount, format: ContentView.localCurrency)
+                            Text(item.amount, format: .localCurrency)
                             /// Challenge 2:
                                 .fontColor(for: item.amount)
                         }
@@ -75,7 +72,7 @@ struct ContentView: View {
                             }
                             Spacer()
                             /// Challenge 1:
-                            Text(item.amount, format: ContentView.localCurrency)
+                            Text(item.amount, format: .localCurrency)
                             /// Challenge 2:
                                 .fontColor(for: item.amount)
                         }
