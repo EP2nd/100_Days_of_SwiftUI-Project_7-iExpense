@@ -7,30 +7,6 @@
 
 import SwiftUI
 
-/// Challenge 2:
-struct AmountModifier: ViewModifier {
-    var color: Color
-    
-    func body(content: Content) -> some View {
-        content
-            .foregroundColor(color)
-    }
-}
-
-/// Challenge 2:
-extension View {
-    func fontColor(for amount: Double) -> some View {
-        switch amount {
-        case 0..<10:
-            return modifier(AmountModifier(color: .green))
-        case 10..<100:
-            return modifier(AmountModifier(color: .orange))
-        default:
-            return modifier(AmountModifier(color: .red))
-        }
-    }
-}
-
 struct ContentView: View {
     
     @StateObject var expenses = Expenses()

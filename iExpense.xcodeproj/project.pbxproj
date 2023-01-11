@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B815E5B9296F3BA200B0BCD3 /* FormatStyle-LocalCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = B815E5B8296F3BA200B0BCD3 /* FormatStyle-LocalCurrency.swift */; };
+		B815E5BB296F75AF00B0BCD3 /* View-ExpenseStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = B815E5BA296F75AF00B0BCD3 /* View-ExpenseStyling.swift */; };
 		B825BB07296C7C660068AA7A /* iExpenseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B825BB06296C7C660068AA7A /* iExpenseApp.swift */; };
 		B825BB09296C7C660068AA7A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B825BB08296C7C660068AA7A /* ContentView.swift */; };
 		B825BB0B296C7C680068AA7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B825BB0A296C7C680068AA7A /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		B815E5B8296F3BA200B0BCD3 /* FormatStyle-LocalCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FormatStyle-LocalCurrency.swift"; sourceTree = "<group>"; };
+		B815E5BA296F75AF00B0BCD3 /* View-ExpenseStyling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View-ExpenseStyling.swift"; sourceTree = "<group>"; };
 		B825BB03296C7C660068AA7A /* iExpense.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iExpense.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B825BB06296C7C660068AA7A /* iExpenseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iExpenseApp.swift; sourceTree = "<group>"; };
 		B825BB08296C7C660068AA7A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -40,6 +42,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B815E5BC296F75EA00B0BCD3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B815E5B8296F3BA200B0BCD3 /* FormatStyle-LocalCurrency.swift */,
+				B815E5BA296F75AF00B0BCD3 /* View-ExpenseStyling.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		B825BAFA296C7C660068AA7A = {
 			isa = PBXGroup;
 			children = (
@@ -59,7 +70,7 @@
 		B825BB05296C7C660068AA7A /* iExpense */ = {
 			isa = PBXGroup;
 			children = (
-				B815E5B8296F3BA200B0BCD3 /* FormatStyle-LocalCurrency.swift */,
+				B815E5BC296F75EA00B0BCD3 /* Extensions */,
 				B825BB06296C7C660068AA7A /* iExpenseApp.swift */,
 				B825BB08296C7C660068AA7A /* ContentView.swift */,
 				B8EA2F5D296D7AA6002DCE39 /* AddView.swift */,
@@ -152,6 +163,7 @@
 				B825BB19296CEFE50068AA7A /* Expenses.swift in Sources */,
 				B825BB09296C7C660068AA7A /* ContentView.swift in Sources */,
 				B8EA2F5E296D7AA6002DCE39 /* AddView.swift in Sources */,
+				B815E5BB296F75AF00B0BCD3 /* View-ExpenseStyling.swift in Sources */,
 				B815E5B9296F3BA200B0BCD3 /* FormatStyle-LocalCurrency.swift in Sources */,
 				B825BB17296CEF230068AA7A /* ExpenseItem.swift in Sources */,
 				B825BB07296C7C660068AA7A /* iExpenseApp.swift in Sources */,
