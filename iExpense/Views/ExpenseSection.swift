@@ -10,7 +10,7 @@
 import SwiftUI
 
 struct ExpenseSection: View {
-    
+//
     let title: String
     let expenses: [ExpenseItem]
     let deleteExpense: (IndexSet) -> Void
@@ -19,17 +19,21 @@ struct ExpenseSection: View {
         Section(title) {
             ForEach(expenses) { item in
                 HStack {
-                    VStack {
+//                    VStack {
                         Text(item.name)
                             .font(.headline)
-                        Text(item.type)
-                    }
+//                        Text(item.type)
+//                    }
                     Spacer()
                     /// Challenge 1:
                     Text(item.amount, format: .localCurrency)
                     /// Challenge 2:
                         .fontColor(for: item.amount)
                 }
+                /// Project 15, challenge 2:
+                .accessibilityElement()
+                .accessibilityLabel("\(item.name), \(item.amount.formatted(.currency(code: "USD")))")
+                .accessibilityHint(item.type)
             }
             .onDelete(perform: deleteExpense)
         }
